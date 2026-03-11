@@ -2,6 +2,7 @@
   --color-orange-500: hsl(25, 97%, 53%);
   --color-white: hsl(0, 100%, 100%);
   --color-grey-500: hsl(217, 12%, 63%);
+  --color-grey-700: rgb(32, 37, 46);
   --color-grey-900: hsl(213, 19%, 18%);
   --color-grey-950: hsl(216, 12%, 8%);
   --body-text: 0.9375rem;
@@ -11,8 +12,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
   margin: 0;
   padding: 0;
+
   font: inherit;
 }
 
@@ -27,10 +30,13 @@ ul {
 
 .sr-only {
   position: absolute;
+
   width: 1px;
   height: 1px;
+
   padding: 0;
   margin: -1px;
+
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -63,10 +69,12 @@ body {
 
   padding: 8px;
   border-radius: 50%;
-  background-color: rgb(41, 46, 55);
+
+  background-color: var(--color-grey-900);
 }
 
-h1 {
+h1,
+h2 {
   font-size: 1.5rem;
   color: var(--color-white);
 }
@@ -83,9 +91,10 @@ form {
   flex-direction: column;
   gap: 24px;
 
-  padding: 24px;
+  padding: 32px;
   border-radius: 16px;
-  background-color: rgb(36, 41, 50);
+
+  background-color: var(--color-grey-700);
 }
 
 fieldset {
@@ -109,7 +118,7 @@ li {
   justify-content: center;
 
   border-radius: 50%;
-  background-color: rgb(40, 46, 55);
+  background-color: var(--color-grey-900);
 }
 
 input {
@@ -142,6 +151,8 @@ li:hover label {
 }
 
 button {
+  margin-top: 8px;
+
   font-weight: 700;
   letter-spacing: 2px;
 
@@ -150,6 +161,7 @@ button {
   padding: 1em;
   border: 0;
   border-radius: 32px;
+
   background-color: var(--color-orange-500);
   color: var(--color-grey-950);
 
@@ -158,4 +170,36 @@ button {
 
 button:hover {
   background-color: var(--color-white);
+}
+
+form[hidden],
+.thank-you-card[hidden] {
+  display: none;
+}
+
+.thank-you-card {
+  width: min(25.75rem, 100% - 6.4vw);
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  padding: 42px 24px;
+  border-radius: 16px;
+
+  background-color: var(--color-grey-700);
+}
+
+.thank-you-card p {
+  text-align: center;
+}
+
+.rating-badge {
+  padding: 8px 12px;
+  border-radius: 32px;
+
+  background-color: var(--color-grey-900);
+  color: var(--color-orange-500);
 }

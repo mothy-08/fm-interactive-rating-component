@@ -3,85 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <title>Interactive rating component</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
     <main>
-      <form aria-labelledby="main-heading">
-        <header>
-          <div class="image-wrapper">
-            <img
-              src="images/icon-star.svg"
-              alt=""
-              aria-hidden="true"
-              width="17"
-              height="16"
-            />
-          </div>
-        </header>
+      <form id="rating-form" aria-labelledby="main-heading">
+        <div class="image-wrapper" aria-hidden="true">
+          <img
+            src="images/icon-star.svg"
+            alt=""
+            aria-hidden="true"
+            width="17"
+            height="16"
+          />
+        </div>
 
         <h1 id="main-heading">How did we do?</h1>
-        <p>
+
+        <p id="rating-description">
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
 
-        <fieldset>
-          <legend class="sr-only">Rating</legend>
+        <fieldset aria-describedby="rating-description">
+          <legend class="sr-only">Select a rating from 1 to 5</legend>
           <ul role="list">
             <li>
-              <input type="radio" name="rating" id="r1" value="1" />
-              <label for="r1">1</label>
+              <input type="radio" name="rating" id="r1" value="1" required />
+              <label for="r1">1 <span class="sr-only">out of 5</span> </label>
             </li>
             <li>
-              <input type="radio" name="rating" id="r2" value="2" />
-              <label for="r2">2</label>
+              <input type="radio" name="rating" id="r2" value="2" required />
+              <label for="r2">2 <span class="sr-only">out of 5</span></label>
             </li>
             <li>
-              <input type="radio" name="rating" id="r3" value="3" />
-              <label for="r3">3</label>
+              <input type="radio" name="rating" id="r3" value="3" required />
+              <label for="r3">3 <span class="sr-only">out of 5</span></label>
             </li>
             <li>
-              <input type="radio" name="rating" id="r4" value="4" />
-              <label for="r4">4</label>
+              <input type="radio" name="rating" id="r4" value="4" required />
+              <label for="r4">4 <span class="sr-only">out of 5</span></label>
             </li>
             <li>
-              <input type="radio" name="rating" id="r5" value="5" />
-              <label for="r5">5</label>
+              <input type="radio" name="rating" id="r5" value="5" required />
+              <label for="r5">5 <span class="sr-only">out of 5</span></label>
             </li>
           </ul>
         </fieldset>
 
         <button type="submit">Submit</button>
       </form>
+
+      <section
+        id="thank-you-card"
+        class="thank-you-card"
+        aria-labelledby="confirmation-heading"
+        hidden
+      >
+        <img
+          src="images/illustration-thank-you.svg"
+          alt=""
+          aria-hidden="true"
+        />
+
+        <p
+          id="rating-badge"
+          class="rating-badge"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+
+        <h2 id="confirmation-heading">Thank you!</h2>
+
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </section>
     </main>
-
-    <!-- Thank you state start -->
-
-    <!-- You selected -->
-    <!-- <!-- Add rating here -->
-
-    <!-- out of 5 Thank you! We appreciate you taking the time to give a rating. If -->
-    <!-- you ever need more support, don’t hesitate to get in touch! -->
-
-    <!-- Thank you state end -->
   </body>
 </html>
